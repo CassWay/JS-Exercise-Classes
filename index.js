@@ -48,8 +48,7 @@ class Person {
   }
 
   eat(someFood){
-    if (this.stomach.length < 10){
-      this.stomach.push(someFood);
+    this.stomach.length < 10 ? this.stomach.push(someFood) : null 
     }
   }
   poop(){
@@ -60,6 +59,8 @@ class Person {
     return `${this.name}, ${this.age}`;
   }
 }
+
+
 
 /*
   TASK 2
@@ -83,8 +84,23 @@ class Car {
     this.odometer = 0 ;
   }
 
+  fill(gallons){
+    this.tank += gallons;
+  }
 
+  drive(distance){
+    if ((distance/this.milesPerGallon) >= this.tank) {
+      this.odometer = this.odometer + (this.tank * this.milesPerGallon);
+      this.tank = 0;
+      return `I ran out of fuel at ${this.odometer} miles!`
+    }
+    this.tank -= distance/this.milesPerGallon;
+    this.odometer += distance;
+  }
 }
+
+
+
 
 /*
   TASK 3
