@@ -1,0 +1,2 @@
+Reference, Notes and -- commits 
+-- initial commit; packages installed, task1 - Person; -- look over someFood and toString
