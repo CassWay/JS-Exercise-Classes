@@ -2,3 +2,4 @@ Reference, Notes and -- commits
 -- initial commit; packages installed, task1 - Person; -- look over someFood and toString
 -- Car constructor built; -- previous someFood and toString refactored & working
 -- car fill and drive built; -- no issues 
+-- Lamdasian built; -- no issues
