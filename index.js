@@ -137,6 +137,11 @@ class Lambdasian {
         + `demo` receives a `subject` string as an argument and returns the phrase 'Today we are learning about {subject}' where subject is the param passed in.
         + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
 */
+
+// STRETCH
+let randomChange = Math.floor(Math.random() * 100) - 50;
+
+
 class Instructor extends Lambdasian{
   constructor(details){
     super(details);
@@ -151,6 +156,18 @@ class Instructor extends Lambdasian{
 
   grade(student, subject){
     return `${student.name} receives a perfect score on ${subject}`;
+  }
+
+  changeGrade(student){
+    let newGrade = student.grade + randomChange;
+    if(newGrade > 100){
+      student.grade = 100;
+    }else if(newGrade < 0) {
+      student.grade = 0;
+    } else {
+      student.grade = newGrade;
+    }
+    return ` I just changed ${student.name}'s grade by ${randomChange} points. They now have ${student.grade}.`;
   }
 }
 
@@ -169,6 +186,9 @@ class Instructor extends Lambdasian{
         + `PRAssignment` a method that receives a subject as an argument and returns `student.name has submitted a PR for {subject}`
         + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
 */
+
+// STRETCH
+let randomGrade = Math.floor(Math.random() * 101) + 1;
 class Student extends Lambdasian{
   constructor(details){
     super(details);
@@ -181,14 +201,19 @@ class Student extends Lambdasian{
     let stringSubs = this.favSubjects.join(', ');
     return `Loving ${stringSubs}!`;
   }
-
   PRAssignment(subject){
     return ` ${this.name} has submitted a PR for ${subject}`;
   }
-
   sprintChallenge(subject){
     return ` ${this.name} has begun sprint challenge on ${subject}.`;
-
+  }
+  graduate(){
+    if (this.grade > 70){
+      return `${this.name}, you are ready to graduate with ${this.grade}%!!!`;
+    } else {
+      let needed = 70 - this.grade;
+      return `${this.name}, you're almost there! You only need ${needed}% more to graduate!`;
+    }
   }
 }
 
@@ -219,6 +244,40 @@ class ProjectManager extends Instructor {
     return `${this.name} debugs ${student.name}'s code on ${subject}`;
   }
 }
+
+
+// Testing 
+
+// let student13_PT = new Student({
+// 	name: 'Wayne',
+// 	age: 44,
+// 	location: 'California',
+// 	previousBackground: 'Introduced to some',
+// 	className: 'WEB13_PT',
+// 	favSubjects: ['HTML', 'CSS', 'JS']
+// });
+// let instructor13 = new Instructor({
+// 	name: 'Mrs. Robinson',
+// 	age: 30,
+// 	location: 'Portland',
+// 	specialty: 'for-loops',
+// 	favLanguage: 'JS',
+// 	catchPhrase: 'You can\'t catch me!'
+// });
+// console.log(student13_PT);
+// console.log(instructor13);
+// console.log(student13_PT.speak());
+// console.log(student13_PT.listSubjects());
+// console.log(student13_PT.PRAssignment('LESS'));
+// console.log(student13_PT.sprintChallenge('HTML'));
+// console.log(student13_PT.graduate());
+// console.log(instructor13.speak());
+// console.log(instructor13.demo('JS'));
+// console.log(instructor13.grade(student1, 'Redux'));
+// console.log(instructor13.changeGrade(student13_PT));
+
+
+
 
 /*
   STRETCH PROBLEM (no tests!)
