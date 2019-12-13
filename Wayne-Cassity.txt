@@ -5,3 +5,4 @@ Reference, Notes and -- commits
 -- Lamdasian built; -- no issues
 -- Instructor extends built; -- no issues
 -- Student extends built to listSubject; -- all working -- end here for night
+-- Student extends built to sprintChallenge; -- this.name not Student
