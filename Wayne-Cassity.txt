@@ -7,3 +7,4 @@ Reference, Notes and -- commits
 -- Student extends built to listSubject; -- all working -- end here for night
 -- Student extends built to sprintChallenge; -- this.name not Student
 -- ProjectManager extends built; adjusted punctuation; --no issues
+-- ALL PASSED; reviewed and adjusted punctuation; -- No Issues, -- DO STRETCH

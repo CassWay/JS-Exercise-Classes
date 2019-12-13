@@ -75,10 +75,10 @@ class Person {
 
 class Car {
   constructor(model, milesPerGallon){
-    this.model = model ;
+    this.model = model;
     this.milesPerGallon = milesPerGallon;
-    this.tank = 0 ;
-    this.odometer = 0 ;
+    this.tank = 0;
+    this.odometer = 0;
   }
 
   fill(gallons){
@@ -89,7 +89,7 @@ class Car {
     if ((distance/this.milesPerGallon) >= this.tank) {
       this.odometer = this.odometer + (this.tank * this.milesPerGallon);
       this.tank = 0;
-      return `I ran out of fuel at ${this.odometer} miles!`
+      return `I ran out of fuel at ${this.odometer} miles!`;
     }
     this.tank -= distance/this.milesPerGallon;
     this.odometer += distance;
@@ -150,7 +150,7 @@ class Instructor extends Lambdasian{
   }
 
   grade(student, subject){
-    return `${student.name} receives a perfect score on ${subject}` ;
+    return `${student.name} receives a perfect score on ${subject}`;
   }
 }
 
@@ -183,11 +183,11 @@ class Student extends Lambdasian{
   }
 
   PRAssignment(subject){
-    return ` ${this.name} has submitted a PR for ${subject} `;
+    return ` ${this.name} has submitted a PR for ${subject}`;
   }
 
   sprintChallenge(subject){
-    return ` ${this.name} has begun sprint challenge on ${subject}. ` ;
+    return ` ${this.name} has begun sprint challenge on ${subject}.`;
 
   }
 }
