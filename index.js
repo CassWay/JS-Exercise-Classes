@@ -113,10 +113,10 @@ class Car {
 */
 class Lambdasian {
   constructor(details){
-    this.name = details.name,
-    this.age = details.age,
-    this.location = details.location,
-    this.favSubjects = ['HTML', 'CSS', 'JS']
+    this.name = details.name;
+    this.age = details.age;
+    this.location = details.location;
+    this.favSubjects = ['HTML', 'CSS', 'JS'];
   }
   speak(){
     return `Hello my name is ${this.name}, I am from ${this.location}`;
@@ -139,10 +139,10 @@ class Lambdasian {
 */
 class Instructor extends Lambdasian{
   constructor(details){
-    super(details)
-    this.specialty = details.specialty,
-    this.favLanguage = details.favLanguage,
-    this.catchPhrase = details.catchPhrase
+    super(details);
+    this.specialty = details.specialty;
+    this.favLanguage = details.favLanguage;
+    this.catchPhrase = details.catchPhrase;
   }
 
   demo(subject){
@@ -171,10 +171,10 @@ class Instructor extends Lambdasian{
 */
 class Student extends Lambdasian{
   constructor(details){
-    super(details)
-    this.previousBackground = details.previousBackground,
-    this.className = details.className,
-    this.favSubjects = details.favSubjects
+    super(details);
+    this.previousBackground = details.previousBackground;
+    this.className = details.className;
+    this.favSubjects = details.favSubjects;
   }
 
   listSubjects(){
@@ -205,8 +205,19 @@ class Student extends Lambdasian{
         + `standUp` a method that takes in a slack channel and returns `{name} announces to {channel}, @channel standy times!`
         + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
 */
-class ProjectManager {
+class ProjectManager extends Instructor {
+  constructor(details){
+    super(details);
+    this.gradClassName = details.gradClassName;
+    this.favInstructor = details.favInstructor;
+  }
+  standUp(channel){
+    return `${this.name} announces to ${channel}, @channel standy times!`;
+  }
 
+  debugsCode(student, subject){
+    return `${this.name} debugs ${student.name}'s code on ${subject}`;
+  }
 }
 
 /*
